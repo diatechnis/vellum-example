@@ -1,0 +1,6 @@
+{% if items %}<nav><ul>
+{% for item in items %}
+    <li>
+    {{ vellum_component('Link', item) }}</li>
+{% endfor %}
+</ul></nav>{% endif %}

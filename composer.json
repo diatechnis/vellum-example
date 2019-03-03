@@ -1,0 +1,30 @@
+{
+  "name": "diatechnis/vellum-example",
+  "description": "An example implementation of Vellum Twig",
+  "type": "project",
+  "prefer-stable": true,
+  "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Kelly",
+            "email": "puritandesigns@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "diatechnis/vellum-twig": "^0.4-alpha"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+      "psr-4": {
+        "VellumExample\\": "src/VellumExample/"
+      }
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "Tests\\": "tests/Tests/"
+      }
+    }
+}
