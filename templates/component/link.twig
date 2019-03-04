@@ -1,7 +1,6 @@
 <a {% if arguments.get('classes') %}
     class="{{ arguments.get('classes') }}"{% endif %}
-    href="{{ arguments.get('link') }}"{% if arguments.get('target') %}
+    href="{{ arguments.get('href') }}"{% if arguments.get('target') %}
     target="_blank" rel="noopener noreferrer"{% endif %}
 >
-    {{ arguments.get('name') }}
-</a>
+    {{ arguments.get('name') }}</a>

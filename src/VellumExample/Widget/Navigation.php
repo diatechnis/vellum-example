@@ -14,15 +14,15 @@ class Navigation extends AbstractWidget implements FetchDataInterface
             'items' => [
                 [
                     'name' => 'Home',
-                    'link' => '/'
+                    'href' => '/'
                 ],
                 [
                     'name' => 'About',
-                    'link' => '/about'
+                    'href' => '/about'
                 ],
                 [
                     'name' => 'Contact',
-                    'link' => '/contact'
+                    'href' => '/contact'
                 ]
             ]
         ];

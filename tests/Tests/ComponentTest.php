@@ -34,32 +34,13 @@ class ComponentTest extends TestCase
 
         $this->setUpInputArrays();
 
-        $this->templates_path = realpath(__DIR__ . '/../../') . '/templates';
-
-        $this->template_resolver = new SimpleTemplatePathResolver('.twig');
-
-        $this->twig = new Environment(
-            new FilesystemLoader($this->templates_path),
-            []
-        );
-
-        VellumTwigExtension::extendTwig(
-            $this->twig,
-            new SimpleClassPathResolver('\\VellumExample'),
-            $this->template_resolver
-        );
-
-        $this->renderer = new TwigRenderer($this->twig, $this->template_resolver);
+        $this->renderer = require \dirname(__DIR__, 2) . '/bootstrap.php';
     }
 
     public function test_home_page_render()
     {
-        //Imagine an HTTP Request Object
-        $homepage = new \VellumExample\Page\Homepage([
-                'page_title' => 'Super Awesome Homepage',
-                'site_title' => 'Awesome Super Site',
-                'use_site_as_h1' => 1
-            ],
+        $homepage = new \VellumExample\Widget\Page(
+            ['page' => 'home'],
             $this->renderer
         );
 
@@ -70,43 +51,23 @@ class ComponentTest extends TestCase
 
     public function test_about_page_render()
     {
-        $page = new \VellumExample\Page\Page([
-                'page_title' => 'Super About Page',
-                'site_title' => 'Awesome Super Site',
-                'page' => 'about'
-            ],
+        $page = new \VellumExample\Widget\Page(
+            ['page' => 'about'],
             $this->renderer
         );
 
         $html = $this->stripWhitespace($page->render());
 
-        $this->assertContains('About Page content', $html);
-    }
-
-    public function test_homepage_inputs()
-    {
-        $homepage = new \VellumExample\Page\Homepage();
-
-        $inputs = $homepage->getAllInputs()->toArray();
-
-        $this->assertContains($this->page_title_input, $inputs);
-
-        $this->assertContains($this->site_title_input, $inputs);
-
-        $this->assertContains($this->use_site_input, $inputs);
+        $this->assertContains('Vellum, the Component Library', $html);
     }
 
     public function test_page_inputs()
     {
-        $page = new \VellumExample\Page\Page();
+        $page = new \VellumExample\Widget\Page();
 
         $inputs = $page->getAllInputs()->toArray();
 
-        $this->assertContains($this->page_title_input, $inputs);
-
-        $this->assertContains($this->site_title_input, $inputs);
-
-        $this->assertContains($this->use_site_input, $inputs);
+        $this->assertContains($this->page_to_load_input, $inputs);
     }
 
     public function test_section_header_inputs()
@@ -163,27 +124,6 @@ class ComponentTest extends TestCase
             'hint' => '',
             'format' => 'string',
             'inputs' => [],
-        ];
-
-        $this->site_title_input = [
-            'name' => 'site_title',
-            'description' => 'The title of the site',
-            'type' => 'text',
-            'hint' => '',
-            'format' => 'string',
-            'inputs' => [],
-        ];
-
-        $this->use_site_input = [
-            'name' => 'use_site_as_h1',
-            'description' => 'Use the site title as the h1 tag?',
-            'type' => 'select',
-            'hint' => '',
-            'format' => 'int',
-            'inputs' => [
-                ['name' => 0, 'value' => 'No'],
-                ['name' => 1, 'value' => 'Yes'],
-            ],
         ];
     }
 }

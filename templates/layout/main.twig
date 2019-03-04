@@ -5,18 +5,16 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% set page_title = arguments.get('page_title', 'Homepage') %}
-    {% set site_title = arguments.get('site_title', 'Example Site') %}
-    <title>{{ page_title }} | {{ site_title }}</title>
+    <title>{{ page_title|default(page|title) }} - Vellum Example</title>
 </head>
 <body>
     {{ vellum_section('Header', {
-        page_title: arguments.get('use_site_as_h1') ? site_title : page_title,
+        page_title: 'home' == page ? 'Vellum Example' : page_title,
         foo: bar
     }) }}
 
-    <main>
-    {% block content %}{% endblock %}
+    <main id="main">
+    {{ vellum_widget('Page', {page: page}) }}
     </main>
 </body>
 </html>
