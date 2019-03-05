@@ -1,0 +1,13 @@
+{
+    "display_types": null,
+    "inputs": [
+        {
+            "name": "page",
+            "description": "The page to load",
+            "type": "text",
+            "hint": "",
+            "format": "string",
+            "inputs": []
+        }
+    ]
+}

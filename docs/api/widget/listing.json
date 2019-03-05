@@ -1,0 +1,69 @@
+{
+    "display_types": {
+        "name": "display_type",
+        "description": "Display Type",
+        "type": "select",
+        "hint": "How should this component look?",
+        "format": "string",
+        "inputs": [
+            {
+                "name": "list",
+                "description": "A simple text and image list",
+                "inputs": [
+                    {
+                        "name": "image_position",
+                        "description": "Float the image to the left or right?",
+                        "type": "select",
+                        "hint": "",
+                        "format": "int",
+                        "inputs": [
+                            {
+                                "name": "left",
+                                "value": "0"
+                            },
+                            {
+                                "name": "right",
+                                "value": "1"
+                            }
+                        ]
+                    }
+                ],
+                "is_default": true
+            },
+            {
+                "name": "card",
+                "description": "Card UI",
+                "inputs": [],
+                "is_default": false
+            },
+            {
+                "name": "background-image",
+                "description": "Information overlaid on an image background",
+                "inputs": [
+                    {
+                        "name": "text_color",
+                        "description": "A CSS hex-based color value",
+                        "type": "text",
+                        "hint": "",
+                        "format": "string",
+                        "inputs": [],
+                        "default_value": "#000"
+                    }
+                ],
+                "is_default": false
+            }
+        ],
+        "default_value": "list"
+    },
+    "inputs": [
+        {
+            "name": "limit",
+            "description": "Number of items to show (1-4)",
+            "type": "text",
+            "hint": "",
+            "format": "string",
+            "inputs": [],
+            "default_value": 3
+        }
+    ]
+}

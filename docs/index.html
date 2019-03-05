@@ -5,9 +5,261 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Vellum Example</title>
+    <title>Welcome to Vellum Example - Vellum Example</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY="
+      crossorigin="anonymous"
+      rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha256-CjSoeELFOcH0/uxWu6mC/Vlrc1AARqbm/jiiImDGV3s="
+      crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>Coming soon....</h1>
+    <header>
+    <a class="sr-only sr-only-focusable" href="#main">Skip to Main Content</a>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+    <div class="container">
+        <button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                                        <li class="nav-item ">
+                        <a     class="nav-link"    href="/">
+    Home</a>
+
+                </li>
+                                                    <li class="nav-item ">
+                        <a     class="nav-link"    href="/about">
+    About</a>
+
+                </li>
+                                                    <li class="nav-item ">
+                        <a     class="nav-link"    href="/contact">
+    Contact</a>
+
+                </li>
+                                                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Component APIs
+                    </a>
+                    <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="/api/component/image.json">
+                            Image
+                        </a>
+                                                <a class="dropdown-item" href="/api/component/link.json">
+                            Link
+                        </a>
+                                            </div>
+                </li>
+                                                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Section APIs
+                    </a>
+                    <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="/api/section/footer.json">
+                            Footer
+                        </a>
+                                                <a class="dropdown-item" href="/api/section/header.json">
+                            Header
+                        </a>
+                                            </div>
+                </li>
+                                                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Widget APIs
+                    </a>
+                    <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="/api/widget/listing.json">
+                            Listing
+                        </a>
+                                                <a class="dropdown-item" href="/api/widget/navigation.json">
+                            Navigation
+                        </a>
+                                                <a class="dropdown-item" href="/api/widget/page.json">
+                            Page
+                        </a>
+                                            </div>
+                </li>
+                                    </ul>
+        </div>
+    </div>
+</nav>
+
+</header>
+
+
+    <main id="main" class="container">
+        <article class="jumbotron">
+    <h1>Welcome to the Vellum Example</h1>
+
+    <p class="lead">
+        The design may be bland, but I hope it gets the point across.
+    </p>
+
+    <p class="lead">
+        <a     href="https://github.com/diatechnis/vellum-example"    target="_blank" rel="noopener noreferrer">
+    Look at the code to see how this html gets generated.</a>
+
+    </p>
+
+    <p class="lead" style="max-width: 30em">
+        Otherwise, navigate this little example site to get a taste of the
+        modular components that can be quickly created with Vellum.
+    </p>
+</article>
+
+<article class="mt-4 mb-5">
+    <h2>Listing with Background Image Display Type</h2>
+
+    <div style="max-width: 1200px;
+            min-height: 300px;
+            max-height: 600px;
+            background: #000 url(https://picsum.photos/1200/600/?image=657) no-repeat"
+>
+    <div style="float: left;
+            padding: 3em 20em 3em 3em;
+            margin: 3em auto;
+            color: #fff"
+    >
+        <h3 class="h1">
+            <a     class="text-white"    href="https://github.com/diatechnis/vellum"    target="_blank" rel="noopener noreferrer">
+    Component Library Vellum</a>
+
+        </h3>
+        <p class="h4">Kindling the energy hidden in matter shores of the cosmic ocean a still more glorious dawn awaits.</p>
+    </div>
+
+    <div style="clear: both"></div>
+</div>
+
+</article>
+
+<article class="mt-4 mb-5">
+    <h2>Listing with Card Display Type</h2>
+
+    <div class="row">
+        <div class="col-sm">
+        <article class="card">
+            <div class="card-body">
+                <h3 class="card-title">
+                    <a     href="https://github.com/diatechnis/vellum"    target="_blank" rel="noopener noreferrer">
+    Component Library Vellum</a>
+
+                </h3>
+                <p class="card-text">Kindling the energy hidden in matter shores of the cosmic ocean a still more glorious dawn awaits.</p>
+            </div>
+            <img src="https://picsum.photos/300/150/?image=657" class="card-img-bottom" alt="">
+        </article>
+    </div>
+        <div class="col-sm">
+        <article class="card">
+            <div class="card-body">
+                <h3 class="card-title">
+                    <a     href="https://github.com/diatechnis/vellum"    target="_blank" rel="noopener noreferrer">
+    Vellum With Twig Templates</a>
+
+                </h3>
+                <p class="card-text">Citizens of distant epochs the sky calls to us not a sunrise but a galaxyrise realm of the galaxies.</p>
+            </div>
+            <img src="https://picsum.photos/300/150/?image=1015" class="card-img-bottom" alt="">
+        </article>
+    </div>
+        <div class="col-sm">
+        <article class="card">
+            <div class="card-body">
+                <h3 class="card-title">
+                    <a     href="https://github.com/diatechnis/vellum"    target="_blank" rel="noopener noreferrer">
+    Vellum Uses Display Types</a>
+
+                </h3>
+                <p class="card-text">Muse about great turbulent clouds dream of the mind&#039;s eye extraordinary claims require extraordinary evidence with pretty stories.</p>
+            </div>
+            <img src="https://picsum.photos/300/150/?image=200" class="card-img-bottom" alt="">
+        </article>
+    </div>
+        <div class="col-sm">
+        <article class="card">
+            <div class="card-body">
+                <h3 class="card-title">
+                    <a     href="https://github.com/diatechnis/vellum"    target="_blank" rel="noopener noreferrer">
+    Renderers, Inputs and Options</a>
+
+                </h3>
+                <p class="card-text">Citizens of distant epochs the sky calls to us not a sunrise but a galaxyrise realm of the galaxies.</p>
+            </div>
+            <img src="https://picsum.photos/300/150/?image=787" class="card-img-bottom" alt="">
+        </article>
+    </div>
+    </div>
+
+</article>
+
+<article class="mt-4 mb-5">
+    <h2>Listing with Simple List Display Type</h2>
+
+    <ul class="row list-unstyled">
+    <li class="media col-sm-6">
+        <img src="https://picsum.photos/150/75/?image=657"
+     alt=""     class="mr-3"/>
+
+        <div class="media-body">
+            <h3 class="mt-0 mb-1">Component Library Vellum</h3>
+            <p>Kindling the energy hidden in matter shores of the cosmic ocean a still more glorious dawn awaits.</p>
+        </div>
+    </li>
+    <li class="media col-sm-6">
+        <img src="https://picsum.photos/150/75/?image=1015"
+     alt=""     class="mr-3"/>
+
+        <div class="media-body">
+            <h3 class="mt-0 mb-1">Vellum With Twig Templates</h3>
+            <p>Citizens of distant epochs the sky calls to us not a sunrise but a galaxyrise realm of the galaxies.</p>
+        </div>
+    </li>
+    <li class="media col-sm-6">
+        <img src="https://picsum.photos/150/75/?image=200"
+     alt=""     class="mr-3"/>
+
+        <div class="media-body">
+            <h3 class="mt-0 mb-1">Vellum Uses Display Types</h3>
+            <p>Muse about great turbulent clouds dream of the mind&#039;s eye extraordinary claims require extraordinary evidence with pretty stories.</p>
+        </div>
+    </li>
+    <li class="media col-sm-6">
+        <img src="https://picsum.photos/150/75/?image=787"
+     alt=""     class="mr-3"/>
+
+        <div class="media-body">
+            <h3 class="mt-0 mb-1">Renderers, Inputs and Options</h3>
+            <p>Citizens of distant epochs the sky calls to us not a sunrise but a galaxyrise realm of the galaxies.</p>
+        </div>
+    </li>
+</ul>
+
+</article>
+
+    </main>
+
+    <footer style="margin-top: 5em; padding: 1em; background-color: #ddd;">
+    <p class="text-center mb-0">
+        Vellum &copy; 2019 Michael Kelly
+    </p>
+</footer>
+
 </body>
 </html>

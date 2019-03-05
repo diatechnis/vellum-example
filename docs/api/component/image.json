@@ -1,0 +1,29 @@
+{
+    "display_types": null,
+    "inputs": [
+        {
+            "name": "src",
+            "description": "The src attribute",
+            "type": "text",
+            "hint": "",
+            "format": "string",
+            "inputs": []
+        },
+        {
+            "name": "alt",
+            "description": "The alt attribute",
+            "type": "text",
+            "hint": "",
+            "format": "string",
+            "inputs": []
+        },
+        {
+            "name": "classes",
+            "description": "CSS classes to add",
+            "type": "text",
+            "hint": "",
+            "format": "string",
+            "inputs": []
+        }
+    ]
+}

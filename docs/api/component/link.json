@@ -1,0 +1,46 @@
+{
+    "display_types": null,
+    "inputs": [
+        {
+            "name": "href",
+            "description": "The value for the href attribute",
+            "type": "text",
+            "hint": "",
+            "format": "string",
+            "inputs": []
+        },
+        {
+            "name": "name",
+            "description": "The displayed link text",
+            "type": "text",
+            "hint": "",
+            "format": "string",
+            "inputs": []
+        },
+        {
+            "name": "target",
+            "description": "The value for the target attribute",
+            "type": "select",
+            "hint": "",
+            "format": "int",
+            "inputs": [
+                {
+                    "name": "Same window",
+                    "value": "0"
+                },
+                {
+                    "name": "New window",
+                    "value": "1"
+                }
+            ]
+        },
+        {
+            "name": "classes",
+            "description": "CSS classes to add to the link",
+            "type": "text",
+            "hint": "",
+            "format": "string",
+            "inputs": []
+        }
+    ]
+}
