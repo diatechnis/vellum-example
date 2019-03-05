@@ -1,0 +1,25 @@
+{% for item in items %}
+<div style="max-width: 1200px;
+            min-height: 300px;
+            max-height: 600px;
+            background: #000 url({{ item.image.full }}) no-repeat"
+>
+    <div style="float: left;
+            padding: 3em 20em 3em 3em;
+            margin: 3em auto;
+            color: {{ arguments.get('display_type.text_color') }}"
+    >
+        <h3 class="h1">
+            {{ vellum_component('Link', {
+                name: item.title,
+                href: item.href,
+                target: item.target,
+                classes: 'text-white'
+            }) }}
+        </h3>
+        <p class="h4">{{ item.summary }}</p>
+    </div>
+
+    <div style="clear: both"></div>
+</div>
+{% endfor %}

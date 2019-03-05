@@ -1,0 +1,63 @@
+#!/usr/bin/env php
+<?php
+
+$renderer = require __DIR__ . '/bootstrap.php';
+
+$pages = [
+    'index' => '/',
+    'about' => '/about',
+    'contact' => '/contact'
+];
+
+$domain = 'https://diatechnis.github.io/vellum-example';
+
+foreach ($pages as $file => $segment) {
+    $request = \Symfony\Component\HttpFoundation\Request::create($segment);
+
+    $page = new \VellumExample\Layout\Main($request, $renderer);
+
+    $html = $page->render();
+
+    file_put_contents(__DIR__ . '/docs/' . $file . '.html', $html);
+}
+
+$class_directory = __DIR__ . '/src/VellumExample';
+
+$getFilesInFolder = function($directory, $omit = ['..', '.', 'Layout']) {
+    return array_diff(scandir($directory), $omit);
+};
+
+$types = $getFilesInFolder($class_directory);
+
+foreach ($types as $type) {
+    $classes = $getFilesInFolder($class_directory . '/' . $type);
+
+    foreach ($classes as $class) {
+        if (strpos($class, 'Abstract') !== false) {
+            continue;
+        }
+
+        $file = str_replace('.php', '', $class);
+
+        $class = '\\VellumExample\\' . $type . '\\' . $file;
+        
+        /** @var \Vellum\Contracts\ArrayableInterface $component */
+        $component = new $class();
+        
+        $json = json_encode($component->toArray(), JSON_PRETTY_PRINT);
+
+        $folder = '/docs/api/' . strtolower($type) . '/';
+        $file = strtolower($file) . '.json';
+
+        // https://github.com/kalessil/phpinspectionsea/blob/master/docs/probable-bugs.md#mkdir-race-condition
+        $ensure_directory = (
+            ! is_dir(__DIR__ . $folder) &&
+            ! mkdir(__DIR__ . $folder) &&
+            ! is_dir(__DIR__ . $folder)
+        );
+
+        file_put_contents(__DIR__ . $folder . $file, $json);
+    }
+}
+
+return 0;

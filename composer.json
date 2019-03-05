@@ -12,7 +12,8 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "diatechnis/vellum-twig": "^0.5",
+        "diatechnis/vellum": "^0.6.1",
+        "diatechnis/vellum-twig": "^0.6.2",
         "symfony/http-foundation": "^4.2.3"
     },
     "require-dev": {

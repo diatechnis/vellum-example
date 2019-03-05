@@ -2,12 +2,29 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$template_dir = __DIR__ . '/templates';
+if (! defined('DATA_DIR')) {
+    define('DATA_DIR', __DIR__ . '/data');
+}
+if (! defined('DOCS_DIR')) {
+    define('DOCS_DIR', __DIR__ . '/docs');
+}
+if (! defined('PUBLIC_DIR')) {
+    define('PUBLIC_DIR', __DIR__ . '/public');
+}
+if (! defined('SRC_DIR')) {
+    define('SRC_DIR', __DIR__ . '/src');
+}
+if (! defined('TEMPLATES_DIR')) {
+    define('TEMPLATES_DIR', __DIR__ . '/templates');
+}
+if (! defined('TESTS_DIR')) {
+    define('TESTS_DIR', __DIR__ . '/tests');
+}
 
 $request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
 
 $twig = new \Twig\Environment(
-    new \Twig\Loader\FilesystemLoader($template_dir),
+    new \Twig\Loader\FilesystemLoader(TEMPLATES_DIR),
     ['debug' => true]
 );
 

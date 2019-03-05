@@ -1,2 +1,55 @@
-<h2>Homepage Content</h2>
+<article class="jumbotron">
+    <h1>Welcome to the Vellum Example</h1>
 
+    <p class="lead">
+        The design may be bland, but I hope it gets the point across.
+    </p>
+
+    <p class="lead">
+        {{ vellum_component('Link', {
+            name: 'Look at the code to see how this html gets generated.',
+            href: 'https://github.com/diatechnis/vellum-example',
+            target: 1
+        }) }}
+    </p>
+
+    <p class="lead" style="max-width: 30em">
+        Otherwise, navigate this little example site to get a taste of the
+        modular components that can be quickly created with Vellum.
+    </p>
+</article>
+
+<article class="mt-4 mb-5">
+    <h2>Listing with Background Image Display Type</h2>
+
+    {{ vellum_widget('Listing', {
+        display_type: {
+            identifier: 'background-image',
+            text_color: '#fff'
+        },
+        limit: 1,
+    }) }}
+</article>
+
+<article class="mt-4 mb-5">
+    <h2>Listing with Card Display Type</h2>
+
+    {{ vellum_widget('Listing', {
+        display_type: {
+            identifier: 'card'
+        },
+        limit: 4
+    }) }}
+</article>
+
+<article class="mt-4 mb-5">
+    <h2>Listing with Simple List Display Type</h2>
+
+    {{ vellum_widget('Listing', {
+        display_type: {
+            identifier: 'list',
+            image_position: 1
+        },
+        limit: 4
+    }) }}
+</article>

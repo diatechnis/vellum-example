@@ -1,5 +1,20 @@
 {
-    "display_types": null,
+    "display_types": {
+        "name": "display_type",
+        "description": "Display Type",
+        "type": "select",
+        "hint": "How should this component look?",
+        "format": "string",
+        "inputs": [
+            {
+                "name": "default",
+                "description": "",
+                "inputs": [],
+                "is_default": true
+            }
+        ],
+        "default_value": "default"
+    },
     "inputs": [
         {
             "name": "page",

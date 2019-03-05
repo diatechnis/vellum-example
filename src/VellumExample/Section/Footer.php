@@ -4,7 +4,7 @@ namespace VellumExample\Section;
 
 use Vellum\Contracts\Components\AbstractComponent;
 
-class Header extends AbstractComponent
+class Footer extends AbstractComponent
 {
 
 }

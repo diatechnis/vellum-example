@@ -1,0 +1,14 @@
+<ul class="row list-unstyled">
+{% for item in items %}
+    <li class="media col-sm-6">
+        {{ vellum_component('Image', {
+            src: item.image.thumb,
+            classes: 'mr-3'
+        }) }}
+        <div class="media-body">
+            <h3 class="mt-0 mb-1">{{ item.title }}</h3>
+            <p>{{ item.summary }}</p>
+        </div>
+    </li>
+{% endfor %}
+</ul>

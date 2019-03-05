@@ -1,6 +1,48 @@
-{% if items %}<nav><ul>
-{% for item in items %}
-    <li>
-    {{ vellum_component('Link', item) }}</li>
-{% endfor %}
-</ul></nav>{% endif %}
+{% if items %}
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+    <div class="container">
+        <button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            {% for item in items %}
+            {% if item.items|length %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        {{ item.name }}
+                    </a>
+                    <div class="dropdown-menu">
+                        {% for subitem in item.items %}
+                        {{ vellum_component('Link', {
+                            href: subitem.href,
+                            name: subitem.name,
+                            target: subitem.target ?: 0,
+                            classes: 'dropdown-item'
+                        }) }}
+                        {% endfor %}
+                    </div>
+                </li>
+            {% else %}
+                <li class="nav-item {{ arguments.get('page') == item.name|lower ? 'active' : '' }}">
+                        {{ vellum_component('Link', {
+                            href: item.href,
+                            name: item.name,
+                            classes: 'nav-link'
+                        }) }}
+                </li>
+            {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endif %}

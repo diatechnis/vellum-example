@@ -2,6 +2,7 @@
 
 namespace VellumExample\Component;
 
+use Vellum\Contracts\Components\AbstractComponent;
 use Vellum\Contracts\Inputs\InputsInterface;
 use Vellum\Inputs\Enums\Formats;
 use Vellum\Inputs\Inputs;
@@ -12,7 +13,7 @@ use Vellum\Inputs\TextInput;
 
 class Link extends AbstractComponent
 {
-    public function getAllInputs(): InputsInterface
+    public function createInputs(): InputsInterface
     {
         return new Inputs(
             new TextInput('href', 'The value for the href attribute'),
