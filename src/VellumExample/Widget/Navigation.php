@@ -17,15 +17,15 @@ class Navigation extends AbstractComponent implements FetchDataInterface
             'items' => [
                 [
                     'name' => 'Home',
-                    'href' => '/'
+                    'href' => '/vellum-example/'
                 ],
                 [
                     'name' => 'About',
-                    'href' => '/about'
+                    'href' => '/vellum-example/about.html'
                 ],
                 [
                     'name' => 'Contact',
-                    'href' => '/contact'
+                    'href' => '/vellum-example/contact.html'
                 ],
                 [
                     'name' => 'Component APIs',
