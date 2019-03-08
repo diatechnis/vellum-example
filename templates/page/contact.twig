@@ -1,4 +1,4 @@
-<h2>Contact Vellum</h2>
+<h1>Contact Vellum</h1>
 
 <p>
     {{ vellum_component('link', {
@@ -8,3 +8,70 @@
     }) }}
     if you are having trouble with Vellum.
 </p>
+
+<h2>Sample Form</h2>
+
+<p>
+    The following form is not real. Submitting it will not do anything.
+</p>
+
+<form method="get">
+    {{ vellum_component('field', {
+        id: 'name',
+        classes: 'form-control',
+        label: 'Your Name',
+        placeholder: 'John Doe',
+        required: 1
+    }) }}
+
+    {{ vellum_component('field', {
+        display_type: {
+            identifier: 'input',
+            type: 'email'
+        },
+        id: 'email',
+        classes: 'form-control',
+        label: 'Your Email',
+        placeholder: 'john.doe@example.com',
+        required: 1
+    }) }}
+
+    {{ vellum_component('field', {
+        display_type: {
+            identifier: 'input',
+            type: 'tel'
+        },
+        id: 'phone',
+        classes: 'form-control',
+        label: 'Your Phone',
+        placeholder: '123.456.7890',
+        required: 0,
+        hint: 'Use your day-time phone'
+    }) }}
+
+    {{ vellum_component('field', {
+        display_type: {
+            identifier: 'select',
+            options: [
+                {name: 'Designer', value: 'designer'},
+                {name: 'Developer', value: 'developer'},
+                {name: 'Other', value: 'other'},
+            ]
+        },
+        id: 'job',
+        classes: 'form-control',
+        label: 'Your Job',
+        required: 0
+    }) }}
+
+    {{ vellum_component('field', {
+        display_type: {
+            identifier: 'textarea'
+        },
+        id: 'comment',
+        classes: 'form-control',
+        label: 'Your Comments',
+        placeholder: 'Keep up the good work...',
+        required: 1
+    }) }}
+</form>
