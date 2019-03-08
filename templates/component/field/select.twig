@@ -1,0 +1,9 @@
+<select id="{{ id }}" name="{{ id }}"
+   class="{{ arguments.get('classes') }}"
+   name="{{ arguments.get('name') }}"
+   {% if arguments.get('required', 0) %}required{% endif %}
+>
+    {% for option in arguments.get('display_type.options') %}
+    <option value="{{ option.value }}">{{ option.name }}</option>
+    {% endfor %}
+</select>

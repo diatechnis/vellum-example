@@ -1,0 +1,146 @@
+{
+    "display_types": {
+        "name": "display_type",
+        "description": "Display Type",
+        "type": "select",
+        "hint": "How should this component look?",
+        "format": "string",
+        "inputs": [
+            {
+                "name": "input",
+                "description": "Use &lt;input&gt; as the field",
+                "inputs": [
+                    {
+                        "name": "type",
+                        "description": "The inputs type attribute",
+                        "type": "select",
+                        "hint": "",
+                        "format": "string",
+                        "inputs": [
+                            {
+                                "name": "text",
+                                "value": "text"
+                            },
+                            {
+                                "name": "email",
+                                "value": "email"
+                            },
+                            {
+                                "name": "phone",
+                                "value": "tel"
+                            },
+                            {
+                                "name": "date",
+                                "value": "date"
+                            },
+                            {
+                                "name": "hidden",
+                                "value": "hidden"
+                            }
+                        ]
+                    }
+                ],
+                "is_default": true
+            },
+            {
+                "name": "textarea",
+                "description": "Use &lt;textarea&gt; as the field",
+                "inputs": [],
+                "is_default": false
+            },
+            {
+                "name": "select",
+                "description": "Use &lt;select&gt; as the field",
+                "inputs": [
+                    {
+                        "name": "options",
+                        "description": "The &lt;option&gt;s for the select",
+                        "type": "app",
+                        "hint": "",
+                        "format": "array",
+                        "inputs": [
+                            {
+                                "name": "name",
+                                "description": "The option name",
+                                "type": "text",
+                                "hint": "",
+                                "format": "string",
+                                "inputs": []
+                            },
+                            {
+                                "name": "value",
+                                "description": "The option value",
+                                "type": "text",
+                                "hint": "",
+                                "format": "string",
+                                "inputs": []
+                            }
+                        ],
+                        "default_value": "[]"
+                    }
+                ],
+                "is_default": false
+            }
+        ],
+        "default_value": "input"
+    },
+    "inputs": [
+        {
+            "name": "id",
+            "description": "The field's id attribute",
+            "type": "text",
+            "hint": "",
+            "format": "string",
+            "inputs": []
+        },
+        {
+            "name": "classes",
+            "description": "The field's class attribute",
+            "type": "text",
+            "hint": "",
+            "format": "string",
+            "inputs": []
+        },
+        {
+            "name": "label",
+            "description": "The label element",
+            "type": "text",
+            "hint": "",
+            "format": "string",
+            "inputs": []
+        },
+        {
+            "name": "placeholder",
+            "description": "An example value",
+            "type": "text",
+            "hint": "",
+            "format": "string",
+            "inputs": []
+        },
+        {
+            "name": "hint",
+            "description": "Hint text",
+            "type": "text",
+            "hint": "",
+            "format": "string",
+            "inputs": []
+        },
+        {
+            "name": "required",
+            "description": "Whether this field is required or not",
+            "type": "select",
+            "hint": "",
+            "format": "int",
+            "inputs": [
+                {
+                    "name": "Optional",
+                    "value": "0"
+                },
+                {
+                    "name": "Required",
+                    "value": "1"
+                }
+            ]
+        }
+    ]
+}

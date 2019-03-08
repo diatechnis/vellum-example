@@ -1,0 +1,5 @@
+<textarea id="{{ id }}" name="{{ id }}"
+   class="{{ arguments.get('classes') }}" {% if arguments.get('required', 0) %}
+   required{% endif %} placeholder="{{ arguments.get('placeholder') }}"
+   type="{{ arguments.get('display_type.type', 'text') }}"
+></textarea>

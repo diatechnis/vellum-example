@@ -1,0 +1,18 @@
+<div class="form-group">
+    {% set id = arguments.get('id') %}
+    <label for="{{ id }}">
+        {{ arguments.get('label') }}{% if not arguments.get('required') %}
+        (Optional){% endif %}
+    </label>
+
+    {% include [
+        'component/field/' ~ arguments.get('display_type.identifier') ~ '.twig',
+        'component/field/input.twig',
+    ] %}
+
+    {% if arguments.get('hint') %}
+    <p class="text-muted">
+        {{ arguments.get('hint') }}
+    </p>
+    {% endif %}
+</div>
